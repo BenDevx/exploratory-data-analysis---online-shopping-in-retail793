@@ -13,12 +13,11 @@ class DataTransform:
         self.df[column] = self.df[column].astype('category')
 
     def convert_to_numeric(self, column):
-        """Convert a column to numeric format, coercing errors."""
-        self.df[column] = pd.to_numeric(self.df[column], errors='coerce')
+        """Convert a column to numeric format """
+        self.df[column] = pd.to_numeric(self.df[column])
 
     def transform(self):
-        """Apply necessary transformations to specific columns."""
-        # Example transformations
+        """Apply transformations to specific columns."""
         if 'month' in self.df.columns:
             self.convert_to_category('month')
 
